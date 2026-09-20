@@ -586,7 +586,7 @@ function loadLB(){
   fetch(SHEET_URL+'?q=all').then(r=>r.json()).then(d=>{
     const pm={'أسبوعي':'weekly','شهري':'monthly'},cm={'الحفظ':'hifz','المراجعة':'muraja','السرد':'sard'};
     const L={weekly:{hifz:[],muraja:[],sard:[]},monthly:{hifz:[],muraja:[],sard:[]}};
-    (d.lb||[]).forEach(r=>{const a=pm[String(r.period).trim()],c=cm[String(r.cat).trim()];if(a&&c)L[a][c].push([String(r.name),String(r.src||''),Number(r.pts)||0])});
+    (d.lb||[]).forEach(r=>{const a=pm[String(r.period).trim()],c=cm[String(r.cat).trim()];if(a&&c)L[a][c].push([String(r.رياض),String(r.src||''),Number(r.10)||0])});
     Object.values(L).forEach(o=>Object.values(o).forEach(a=>a.sort((x,y)=>y[2]-x[2])));
     Object.assign(LB,L);
     PROJ.length=0;
